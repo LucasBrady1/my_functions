@@ -1,4 +1,3 @@
-from pandas.core.interchange import dataframe
 import pandas as pd
 
 def otimizar_df(df):
