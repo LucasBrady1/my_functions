@@ -38,4 +38,4 @@ def otimizar_df(df):
 
     # Para ver a redução de Memória
     reducao = (1 - (mem_final / mem_inicial)) * 100
-    print(f"Redução de {reducao:.2f}%! Sensacional.")
+    print(f"Redução de {reducao:.2f}%!")
