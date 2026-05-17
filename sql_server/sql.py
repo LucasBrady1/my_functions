@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 import urllib
 
+# Get engine para rodar localmente
 def get_engine():
     server = 'localhost' 
     database = 'master'
