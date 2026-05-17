@@ -1,4 +1,11 @@
+from numpy import column_stack
 import pandas as pd
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 def otimizar_df(df):
 
@@ -8,9 +15,9 @@ def otimizar_df(df):
     """
 
     # Auditoria Inicial
-    print("--- MEMÓRIA ORIGINAL ---")
+    logging.info("--- MEMÓRIA ORIGINAL ---")
     mem_inicial = df.memory_usage(deep=True).sum()
-    print(f"Total: {mem_inicial / 1024**2:.2f} MB")
+    logging.info(f"Total: {mem_inicial / 1024**2:.2f} MB")
 
     for col in df.columns:
         col_type = df[col].dtype
@@ -32,10 +39,11 @@ def otimizar_df(df):
                 df[col] = df[col].astype('category')
 
     # Auditoria Final
-    print("\n--- MEMÓRIA PÓS-OTIMIZAÇÃO ---")
+    logging.info("\n--- MEMÓRIA PÓS-OTIMIZAÇÃO ---")
     mem_final = df.memory_usage(deep=True).sum()
-    print(f"Total: {mem_final / 1024**2:.2f} MB")
+    logging.info(f"Total: {mem_final / 1024**2:.2f} MB")
 
     # Para ver a redução de Memória
     reducao = (1 - (mem_final / mem_inicial)) * 100
-    print(f"Redução de {reducao:.2f}%!")
+    logging.info(f"Redução de {reducao:.2f}%!")
+
