@@ -1,3 +1,4 @@
+import typing_extensions
 from sqlalchemy import create_engine
 import urllib
 
@@ -17,4 +18,14 @@ def get_engine():
     return create_engine(
         f"mssql+pyodbc:///?odbc_connect={params}",
         fast_executemany=True
+    )
+
+def inserir_dados(df , tabela, engine):
+
+    df.to_sql(
+        name=tabela,
+        con=engine,
+        if_exists='append',
+        Index=False,
+        chunksize=20000
     )
