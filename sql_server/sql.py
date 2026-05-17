@@ -20,6 +20,7 @@ def get_engine():
         fast_executemany=True
     )
 
+# Func para Inserir dados no SQL Server
 def inserir_dados(df , tabela, engine):
 
     df.to_sql(
