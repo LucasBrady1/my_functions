@@ -14,5 +14,6 @@ def get_engine():
     )
     
     return create_engine(
-        f"mssql+pyodbc:///?odbc_connect={params}"
+        f"mssql+pyodbc:///?odbc_connect={params}",
+        fast_executemany=True
     )
