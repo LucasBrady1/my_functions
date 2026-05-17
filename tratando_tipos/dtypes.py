@@ -1,4 +1,3 @@
-from numpy import column_stack
 import pandas as pd
 import logging
 
