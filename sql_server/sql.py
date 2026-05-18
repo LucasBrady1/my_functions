@@ -33,4 +33,4 @@ def inserir_dados(df , tabela, engine):
 
 
 def if_exists():
-    print("Caique é gay")
+    print("Caique é gayy")
