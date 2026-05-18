@@ -30,3 +30,7 @@ def inserir_dados(df , tabela, engine):
         Index=False,
         chunksize=20000
     )
+
+
+def if_exists():
+    print("Caique é gay")
